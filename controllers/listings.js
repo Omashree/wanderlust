@@ -13,7 +13,9 @@ module.exports.index = async (req, res) => {
         filter.$or = [
             { title: { $regex: searchRegex } },
             { description: { $regex: searchRegex } },
-            { category: { $regex: searchRegex } }
+            { category: { $regex: searchRegex } },
+            { location: { $regex: searchRegex } },
+            { country: { $regex: searchRegex } }
         ];
     }
     if (Object.keys(filter).length > 0) {
